@@ -38,8 +38,6 @@ function App() {
     );
   }
 
-  console.log("AuthUser ==>>", authUser);
-
   return (
     <>
       <div className="flex max-w-6xl mx-auto">
