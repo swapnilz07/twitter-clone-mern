@@ -39,7 +39,7 @@ export const followUnfollowUser = async (req, res) => {
       // to unFollow the user
       await User.findByIdAndUpdate(id, { $pull: { followers: req.user._id } });
       await User.findByIdAndUpdate(req.user._id, { $pull: { following: id } });
-      // TODO: return the id of the user as a respponse
+
       return res.status(200).json({ message: " User unfollowed." });
     } else {
       // to Follow the user
@@ -54,7 +54,6 @@ export const followUnfollowUser = async (req, res) => {
 
       await newNotification.save();
 
-      // TODO: return the id of the user as a respponse
       return res.status(200).json({ message: "User followed successfully." });
     }
   } catch (error) {
@@ -81,7 +80,7 @@ export const getSuggestedUsers = async (req, res) => {
     ]);
 
     const filteredUsers = users.filter(
-      (user) => !usersFollowedByMe.following.includes(user._id)
+      (user) => !userFollowedByMe.following.includes(user._id)
     );
 
     const suggestedUsers = filteredUsers.slice(0, 4);

@@ -11,15 +11,15 @@ export const createPost = async (req, res) => {
     const userId = req.user._id.toString();
 
     const user = await User.findById(userId);
-    if (!user) return res.status(404).json({ message: "User not found." });
+    if (!user) return res.status(404).json({ message: "User not found" });
 
-    if (!text && !img)
-      return res
-        .status(400)
-        .json({ message: "Post must have a text or image." });
+    if (!text && !img) {
+      return res.status(400).json({ error: "Post must have text or image" });
+    }
 
     if (img) {
       const uploadedResponse = await cloudinary.uploader.upload(img);
+      console.log("uploadedResponse==>>", uploadedResponse);
       img = uploadedResponse.secure_url;
     }
 
@@ -30,10 +30,10 @@ export const createPost = async (req, res) => {
     });
 
     await newPost.save();
-    res.status(201).json({ newPost });
+    res.status(201).json(newPost);
   } catch (error) {
-    console.log("Error in creating post", error.message);
-    res.status(500).json({ error: "Internal server error." });
+    res.status(500).json({ error: "Internal server error" });
+    console.log("Error in createPost controller: ", error.message);
   }
 };
 
