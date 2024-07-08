@@ -35,6 +35,8 @@ const Sidebar = () => {
 
   const { data: authUser } = useQuery({ queryKey: ["authUser"] });
 
+  console.log("authUser profilie ==>> ", authUser);
+
   return (
     <div className="md:flex-[2_2_0] w-18 max-w-52">
       <div className="sticky top-0 left-0 h-screen flex flex-col border-r border-gray-700 w-20 md:w-full">
@@ -63,7 +65,7 @@ const Sidebar = () => {
 
           <li className="flex justify-center md:justify-start">
             <Link
-              to={`/profile/${authUser?.user?.username}`}
+              to={`/profile/${authUser?.username}`}
               className="flex gap-3 items-center hover:bg-stone-900 transition-all rounded-full duration-300 py-2 pl-2 pr-4 max-w-fit cursor-pointer"
             >
               <FaUser className="w-6 h-6" />
@@ -73,7 +75,7 @@ const Sidebar = () => {
         </ul>
         {authUser && (
           <Link
-            to={`/profile/${authUser?.user?.username}`}
+            to={`/profile/${authUser?.username}`}
             className="mt-auto mb-10 flex gap-2 items-start transition-all duration-300 hover:bg-[#181818] py-2 px-4 rounded-full"
           >
             <div className="avatar hidden md:inline-flex">

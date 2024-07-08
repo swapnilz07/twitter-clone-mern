@@ -12,7 +12,7 @@ export const getuserProfile = async (req, res) => {
 
     if (!user) return res.status(404).json({ message: "User not found." });
 
-    return res.status(200).json({ user });
+    return res.status(200).json( user );
   } catch (error) {
     console.log("Error in get user profile", error.message);
     return res.status(500).json({ error: error.message });
