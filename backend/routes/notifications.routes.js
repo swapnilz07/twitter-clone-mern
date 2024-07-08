@@ -7,7 +7,7 @@ import {
 
 const router = express.Router();
 
-router.get("/", protectRoute, getNotifications);
+router.get("/getall", protectRoute, getNotifications);
 router.delete("/delete", protectRoute, deleteNotifications);
 
 export default router;
