@@ -25,7 +25,7 @@ const Sidebar = () => {
       }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["authUser"] });
+      queryClient.invalidateQueries({ queryKey: ["authuser"] });
       window.location.href = "/login";
     },
     onError: () => {
@@ -33,7 +33,7 @@ const Sidebar = () => {
     },
   });
 
-  const { data: authUser } = useQuery({ queryKey: ["authUser"] });
+  const { data: authUser } = useQuery({ queryKey: ["authuser"] });
 
   console.log("authUser profilie ==>> ", authUser);
 

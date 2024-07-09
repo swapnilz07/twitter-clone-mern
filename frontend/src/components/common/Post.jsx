@@ -14,7 +14,7 @@ import { formatPostDate } from "../../utils/date/dateFormat";
 const Post = ({ post }) => {
   const [comment, setComment] = useState("");
 
-  const { data: authUser } = useQuery({ queryKey: ["authUser"] });
+  const { data: authUser } = useQuery({ queryKey: ["authuser"] });
 
   const queryClient = useQueryClient();
 
