@@ -72,5 +72,3 @@ function App() {
 }
 
 export default App;
-
-// 4.08.37
