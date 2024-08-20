@@ -94,7 +94,7 @@ const LoginPage = () => {
           <p className="text-white text-lg">{"Don't"} have an account?</p>
           <Link to="/signup">
             <button className="btn rounded-full btn-primary text-white btn-outline w-full">
-              Sign up
+              Sign In
             </button>
           </Link>
         </div>
