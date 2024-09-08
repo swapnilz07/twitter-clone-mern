@@ -9,6 +9,6 @@ export const generateToenAndSetCookie = (userId, res) => {
     maxAge: 15 * 24 * 60 * 60 * 1000,
     httpOnly: true, // to prevent XSS( cross site scripting ) attacks.
     sameSite: "strict", // to prevent CSRF( cross site request forgery ) attacks.
-    secure: process.env.Node_ENV !== "development",
+    secure: process.env.NODE_ENV !== "development",
   });
 };
