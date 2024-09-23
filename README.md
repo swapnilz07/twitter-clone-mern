@@ -36,4 +36,4 @@ Dont Forget to installed the dependencies require for a project:
 ### 4. Run the project
 Make sure you have installed dependencies require for a project : 
 - npm run dev (run this command on the root directory of the project)
-- http://localhost:5000 (run this localhost).
+- http://localhost:5000 (open this url).
